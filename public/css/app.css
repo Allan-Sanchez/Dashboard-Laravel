@@ -13183,6 +13183,10 @@ a.text-muted:hover {
   color: green;
 }
 
+.white {
+  color: white;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

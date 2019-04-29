@@ -1892,21 +1892,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -37275,513 +37260,98 @@ var staticRenderFns = [
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
               _c("h3", { staticClass: "card-title" }, [
-                _vm._v("Hover Data Table")
+                _vm._v("User Controler")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-tools" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success",
+                    attrs: { "data-toggle": "modal", "data-target": "#newUser" }
+                  },
+                  [
+                    _vm._v("Add New "),
+                    _c("i", { staticClass: "fas fa-user-plus" })
+                  ]
+                )
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _c(
-                "div",
+                "table",
                 {
-                  staticClass:
-                    "dataTables_wrapper container-fluid dt-bootstrap4",
-                  attrs: { id: "example2_wrapper" }
+                  staticClass: "table table-bordered table-hover",
+                  attrs: { id: "example2" }
                 },
                 [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-sm-12 col-md-6" }),
-                    _c("div", { staticClass: "col-sm-12 col-md-6" })
-                  ]),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-sm-12" }, [
-                      _c(
-                        "table",
-                        {
-                          staticClass:
-                            "table table-bordered table-hover dataTable",
-                          attrs: {
-                            id: "example2",
-                            role: "grid",
-                            "aria-describedby": "example2_info"
-                          }
-                        },
-                        [
-                          _c("thead", [
-                            _c("tr", { attrs: { role: "row" } }, [
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "sorting_asc",
-                                  attrs: {
-                                    tabindex: "0",
-                                    "aria-controls": "example2",
-                                    rowspan: "1",
-                                    colspan: "1",
-                                    "aria-sort": "ascending",
-                                    "aria-label":
-                                      "Rendering engine: activate to sort column descending"
-                                  }
-                                },
-                                [_vm._v("Rendering engine")]
-                              ),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "sorting",
-                                  attrs: {
-                                    tabindex: "0",
-                                    "aria-controls": "example2",
-                                    rowspan: "1",
-                                    colspan: "1",
-                                    "aria-label":
-                                      "Browser: activate to sort column ascending"
-                                  }
-                                },
-                                [_vm._v("Browser")]
-                              ),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "sorting",
-                                  attrs: {
-                                    tabindex: "0",
-                                    "aria-controls": "example2",
-                                    rowspan: "1",
-                                    colspan: "1",
-                                    "aria-label":
-                                      "Platform(s): activate to sort column ascending"
-                                  }
-                                },
-                                [_vm._v("Platform(s)")]
-                              ),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "sorting",
-                                  attrs: {
-                                    tabindex: "0",
-                                    "aria-controls": "example2",
-                                    rowspan: "1",
-                                    colspan: "1",
-                                    "aria-label":
-                                      "Engine version: activate to sort column ascending"
-                                  }
-                                },
-                                [_vm._v("Engine version")]
-                              ),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "sorting",
-                                  attrs: {
-                                    tabindex: "0",
-                                    "aria-controls": "example2",
-                                    rowspan: "1",
-                                    colspan: "1",
-                                    "aria-label":
-                                      "CSS grade: activate to sort column ascending"
-                                  }
-                                },
-                                [_vm._v("CSS grade")]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c(
-                              "tr",
-                              { staticClass: "odd", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Firefox 1.0")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 98+ / OSX.2+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.7")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "even", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Firefox 1.5")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 98+ / OSX.2+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.8")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "odd", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Firefox 2.0")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 98+ / OSX.2+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.8")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "even", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Firefox 3.0")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 2k+ / OSX.3+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.9")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "odd", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Camino 1.0")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("OSX.2+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.8")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "even", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Camino 1.5")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("OSX.3+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.8")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "odd", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Netscape 7.2")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 95+ / Mac OS 8.6-9.2")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.7")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "even", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Netscape Browser 8")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 98SE+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.7")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "odd", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Netscape Navigator 9")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 98+ / OSX.2+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1.8")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            ),
-                            _c(
-                              "tr",
-                              { staticClass: "even", attrs: { role: "row" } },
-                              [
-                                _c("td", { staticClass: "sorting_1" }, [
-                                  _vm._v("Gecko")
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Mozilla 1.0")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("Win 95+ / OSX.1+")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("1")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v("A")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("tfoot", [
-                            _c("tr", [
-                              _c(
-                                "th",
-                                { attrs: { rowspan: "1", colspan: "1" } },
-                                [_vm._v("Rendering engine")]
-                              ),
-                              _c(
-                                "th",
-                                { attrs: { rowspan: "1", colspan: "1" } },
-                                [_vm._v("Browser")]
-                              ),
-                              _c(
-                                "th",
-                                { attrs: { rowspan: "1", colspan: "1" } },
-                                [_vm._v("Platform(s)")]
-                              ),
-                              _c(
-                                "th",
-                                { attrs: { rowspan: "1", colspan: "1" } },
-                                [_vm._v("Engine version")]
-                              ),
-                              _c(
-                                "th",
-                                { attrs: { rowspan: "1", colspan: "1" } },
-                                [_vm._v("CSS grade")]
-                              )
-                            ])
-                          ])
-                        ]
-                      )
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [_vm._v("ID")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("User")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("email")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Status")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Accion")])
                     ])
                   ]),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-sm-12 col-md-5" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "dataTables_info",
-                          attrs: {
-                            id: "example2_info",
-                            role: "status",
-                            "aria-live": "polite"
-                          }
-                        },
-                        [_vm._v("Showing 1 to 10 of 57 entries")]
-                      )
-                    ]),
-                    _c("div", { staticClass: "col-sm-12 col-md-7" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "dataTables_paginate paging_simple_numbers",
-                          attrs: { id: "example2_paginate" }
-                        },
-                        [
-                          _c("ul", { staticClass: "pagination" }, [
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [_vm._v("1")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Allan Sanchez")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("asanchez@gmail.com")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Approved")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "btn-group",
+                            attrs: { role: "group" }
+                          },
+                          [
                             _c(
-                              "li",
+                              "button",
                               {
-                                staticClass:
-                                  "paginate_button page-item previous disabled",
-                                attrs: { id: "example2_previous" }
+                                staticClass: "btn btn-info btn-sm",
+                                attrs: { type: "button" }
                               },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "0",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("Previous")]
-                                )
-                              ]
+                              [_c("i", { staticClass: "fas fa-edit white" })]
                             ),
+                            _vm._v(" "),
                             _c(
-                              "li",
+                              "button",
                               {
-                                staticClass: "paginate_button page-item active"
+                                staticClass: "btn btn-danger mx-1 btn-sm",
+                                attrs: { type: "button" }
                               },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "1",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("1")]
-                                )
-                              ]
-                            ),
-                            _c(
-                              "li",
-                              { staticClass: "paginate_button page-item " },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "2",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("2")]
-                                )
-                              ]
-                            ),
-                            _c(
-                              "li",
-                              { staticClass: "paginate_button page-item " },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "3",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("3")]
-                                )
-                              ]
-                            ),
-                            _c(
-                              "li",
-                              { staticClass: "paginate_button page-item " },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "4",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("4")]
-                                )
-                              ]
-                            ),
-                            _c(
-                              "li",
-                              { staticClass: "paginate_button page-item " },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "5",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("5")]
-                                )
-                              ]
-                            ),
-                            _c(
-                              "li",
-                              { staticClass: "paginate_button page-item " },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "6",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("6")]
-                                )
-                              ]
-                            ),
-                            _c(
-                              "li",
-                              {
-                                staticClass: "paginate_button page-item next",
-                                attrs: { id: "example2_next" }
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "page-link",
-                                    attrs: {
-                                      href: "#",
-                                      "aria-controls": "example2",
-                                      "data-dt-idx": "7",
-                                      tabindex: "0"
-                                    }
-                                  },
-                                  [_vm._v("Next")]
-                                )
-                              ]
+                              [_c("i", { staticClass: "fas fa-trash" })]
                             )
-                          ])
-                        ]
-                      )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tfoot", [
+                    _c("tr", [
+                      _c("th", [_vm._v("Rendering engine")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Browser")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Platform(s)")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Engine version")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("CSS grade")])
                     ])
                   ])
                 ]
@@ -37789,7 +37359,84 @@ var staticRenderFns = [
             ])
           ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "newUser",
+            tabindex: "-1",
+            role: "dialog",
+            "aria-labelledby": "modelTitleId",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "modal-dialog modal-dialog-centered",
+              attrs: { role: "document" }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "modal-content modal-content-centered" },
+                [
+                  _c("div", { staticClass: "modal-header" }, [
+                    _c("h5", { staticClass: "modal-title" }, [
+                      _vm._v("Add User")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "close",
+                        attrs: {
+                          type: "button",
+                          "data-dismiss": "modal",
+                          "aria-label": "Close"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { "aria-hidden": "true" } }, [
+                          _vm._v("×")
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "modal-body" }, [
+                    _vm._v("\n            Body\n          ")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "modal-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        attrs: { type: "button", "data-dismiss": "modal" }
+                      },
+                      [_vm._v("Close")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" }
+                      },
+                      [_vm._v("Save")]
+                    )
+                  ])
+                ]
+              )
+            ]
+          )
+        ]
+      )
     ])
   }
 ]
