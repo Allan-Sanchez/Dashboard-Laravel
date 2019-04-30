@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -37,11 +37,11 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
+                                    <th>ID</th>
+                                    <th>User</th>
+                                    <th>email</th>
+                                    <th>Status</th>
+                                    <th>Accion</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -62,13 +62,50 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
               </div>
+              <form action="" @submit.prevent="createUser">
               <div class="modal-body">
-                Body
+                <!-- name -->
+                <div class="form-group">
+                  <input v-model="form.name" type="text" name="name" placeholder="name" required
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
+                  <has-error :form="form" field="name"></has-error>
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                  <input v-model="form.email" type="email" name="email" placeholder="email" required
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
+                  <has-error :form="form" field="email"></has-error>
+                </div>
+                <!-- password -->
+                <div class="form-group">
+                  <input v-model="form.password" type="password" name="password" placeholder="password" required
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('password') }">
+                  <has-error :form="form" field="password"></has-error>
+                </div>
+                <!-- type -->
+                <div class="form-group">
+                  <select name="type" v-model="form.type" class="form-control" required
+                  :class="{ 'is-invalid': form.errors.has('type') }">
+                    <option value="">Select User Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">Standard user</option>
+                  </select>
+                  <has-error :form="form" field="type"></has-error>
+                </div>
+                <!-- bio -->
+                <div class="form-group">
+                  <textarea name="bio" cols="3" rows="3" v-model="form.bio" placeholder="short bio for user (optional)"
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('bio') }">
+                    </textarea>
+
+                  <has-error :form="form" field="bio"></has-error>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -76,6 +113,23 @@
 </template>
 <script>
     export default {
+      data() {
+        return {
+          form: new Form({
+            name:null,
+            email:null,
+            password:null,
+            type:'',
+            bio:null,
+            photo:null
+          }),
+        }
+      },
+      methods: {
+        createUser(){
+          this.form.post('api/user');
+        }
+      },
 
     }
 
