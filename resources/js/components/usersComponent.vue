@@ -124,7 +124,17 @@
       },
       methods: {
         createUser(){
+          this.$Progress.start();
           this.form.post('api/user');
+
+          $('#newUser').modal('hide');
+
+           new toast({
+            type:'success',
+            title:'User created in successfully',
+          });
+
+          this.$Progress.finish ();
         },
         loadUsers(){
           axios.get('api/user').then((result) => {

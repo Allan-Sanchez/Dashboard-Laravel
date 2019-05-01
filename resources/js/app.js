@@ -6,6 +6,8 @@ window.Vue = require('vue');
 import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform';
 import VueRouter from 'vue-router';
+import vueProgressBar from 'vue-progressbar';
+import swal from 'sweetalert2';
 
 /*
 ** @V form 
@@ -45,8 +47,30 @@ let routes = [
 
 //  end filter
 
+/*
+** @vue progress bar 
+*/
+Vue.use(vueProgressBar,{
+  color:'rbga(143,255,199)',
+  failedColor:'red',
+  height:'3px',
+});
+// end vue progress bar
 
+/*
+** @Sweetalert  
+*/
+window.swal = swal;
+const toast = swal.mixin({
+  toast: true,
+  position:'top-end',
+  showConfirmButton:false,
+  timer:3000,
+});
 
+window.toast = toast;
+
+// end sweetalert
 const app = new Vue({
     el: '#app',
     router,
