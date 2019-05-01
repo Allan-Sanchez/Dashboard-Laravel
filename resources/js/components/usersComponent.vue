@@ -16,17 +16,19 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>User</th>
-                                    <th>email</th>
-                                    <th>Status</th>
+                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Registered At</th>
                                     <th>Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Allan Sanchez</td>
-                                    <td>asanchez@gmail.com</td>
-                                    <td>Approved</td>
+                                <tr v-for="user in users" :key="user.id">
+                                    <td>{{user.id}}</td>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.type}}</td>
+                                    <td>{{user.created_at}}</td>
                                     <td>
                                       <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-info btn-sm"> <i class="fas fa-edit white"></i> </button>
@@ -35,15 +37,6 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>User</th>
-                                    <th>email</th>
-                                    <th>Status</th>
-                                    <th>Accion</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -115,6 +108,7 @@
     export default {
       data() {
         return {
+          users: {},
           form: new Form({
             name:null,
             email:null,
@@ -125,9 +119,19 @@
           }),
         }
       },
+      created() {
+        this.loadUsers();
+      },
       methods: {
         createUser(){
           this.form.post('api/user');
+        },
+        loadUsers(){
+          axios.get('api/user').then((result) => {
+            this.users = result.data.data;
+          }).catch((err) => {
+            console.log(err);
+          });
         }
       },
 
