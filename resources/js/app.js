@@ -1,12 +1,9 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+
 
 require('./bootstrap');
 
 window.Vue = require('vue');
+import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform';
 import VueRouter from 'vue-router';
 
@@ -17,6 +14,9 @@ window.Form = Form;
 Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
 
+/*
+** @vue router 
+*/
 Vue.use(VueRouter);     
 
 let routes = [
@@ -30,9 +30,21 @@ let routes = [
     routes 
   });
 
+  // end vue router
+  
+  /*
+  ** @filters 
+  */
+ Vue.filter('upText',(text) => {
+   return text.charAt(0).toUpperCase()+text.slice(1);
+ });
 
+ Vue.filter('myDate',(date) => {
+   return moment(date).format('MMMM Do YYYY');
+ });
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//  end filter
+
 
 
 const app = new Vue({
