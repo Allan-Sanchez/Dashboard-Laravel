@@ -23,15 +23,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="user in users" :key="user.id">
-                                    <td>{{user.id}}</td>
+                                <tr v-for="(user,index) in users" :key="index">
+                                    <td>{{(index + 1)}}</td>
                                     <td>{{user.name}}</td>
                                     <td>{{user.email}}</td>
                                     <td>{{user.type | upText}}</td>
                                     <td>{{user.created_at|myDate}}</td>
                                     <td>
                                       <div class="btn-group" role="group">
-                                        <button type="button" class="btn btn-info btn-sm"> <i class="fas fa-edit white"></i> </button>
+                                        <button @click="updateUser(user)" type="button" class="btn btn-info btn-sm"> <i class="fas fa-edit white"></i> </button>
                                         <button @click="deleteUser(user.id)" type="button" class="btn btn-danger mx-1 btn-sm"> <i class="fas fa-trash"></i> </button>
                                       </div>
                                     </td>
@@ -151,6 +151,11 @@
           }).catch((err) => {
             console.log(err);
           });
+        },
+        updateUser(user){
+          this.form.reset();
+          $('#newUser').modal('show');
+          this.form.fill(user);
         },
         deleteUser(id){
            new swal({

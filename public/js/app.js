@@ -1971,6 +1971,11 @@ __webpack_require__.r(__webpack_exports__);
         console.log(err);
       });
     },
+    updateUser: function updateUser(user) {
+      this.form.reset();
+      $('#newUser').modal('show');
+      this.form.fill(user);
+    },
     deleteUser: function deleteUser(id) {
       var _this4 = this;
 
@@ -58710,9 +58715,9 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.users, function(user) {
-                    return _c("tr", { key: user.id }, [
-                      _c("td", [_vm._v(_vm._s(user.id))]),
+                  _vm._l(_vm.users, function(user, index) {
+                    return _c("tr", { key: index }, [
+                      _c("td", [_vm._v(_vm._s(index + 1))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(user.name))]),
                       _vm._v(" "),
@@ -58732,7 +58737,19 @@ var render = function() {
                             attrs: { role: "group" }
                           },
                           [
-                            _vm._m(2, true),
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-info btn-sm",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.updateUser(user)
+                                  }
+                                }
+                              },
+                              [_c("i", { staticClass: "fas fa-edit white" })]
+                            ),
                             _vm._v(" "),
                             _c(
                               "button",
@@ -58782,7 +58799,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "modal-content modal-content-centered" }, [
-              _vm._m(3),
+              _vm._m(2),
               _vm._v(" "),
               _c(
                 "form",
@@ -59022,7 +59039,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(4)
+                  _vm._m(3)
                 ]
               )
             ])
@@ -59071,16 +59088,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Accion")])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn btn-info btn-sm", attrs: { type: "button" } },
-      [_c("i", { staticClass: "fas fa-edit white" })]
-    )
   },
   function() {
     var _vm = this
