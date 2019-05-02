@@ -1957,6 +1957,8 @@ __webpack_require__.r(__webpack_exports__);
           title: 'User created in successfully'
         });
 
+        _this2.form.reset();
+
         _this2.$Progress.finish();
       })["catch"](function (err) {});
     },

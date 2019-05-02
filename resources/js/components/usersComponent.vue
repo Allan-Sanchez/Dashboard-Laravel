@@ -137,6 +137,7 @@
                  type:'success',
                  title:'User created in successfully',
                  });
+              this.form.reset();
   
             this.$Progress.finish ();
             
