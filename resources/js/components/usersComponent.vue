@@ -32,7 +32,7 @@
                                     <td>
                                       <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-info btn-sm"> <i class="fas fa-edit white"></i> </button>
-                                        <button type="button" class="btn btn-danger mx-1 btn-sm"> <i class="fas fa-trash"></i> </button>
+                                        <button @click="deleteUser(user.id)" type="button" class="btn btn-danger mx-1 btn-sm"> <i class="fas fa-trash"></i> </button>
                                       </div>
                                     </td>
                                 </tr>
@@ -121,26 +121,67 @@
       },
       created() {
         this.loadUsers();
+        Fire.$on('afterCreate',() => {
+          this.loadUsers();
+        });
       },
       methods: {
         createUser(){
           this.$Progress.start();
-          this.form.post('api/user');
-
-          $('#newUser').modal('hide');
-
-           new toast({
-            type:'success',
-            title:'User created in successfully',
+          this.form.post('api/user')
+            .then((result) => {
+                Fire.$emit('afterCreate');
+                $('#newUser').modal('hide');
+  
+                new toast({
+                 type:'success',
+                 title:'User created in successfully',
+                 });
+  
+            this.$Progress.finish ();
+            
+          }).catch((err) => {
+            
           });
-
-          this.$Progress.finish ();
         },
         loadUsers(){
           axios.get('api/user').then((result) => {
             this.users = result.data.data;
           }).catch((err) => {
             console.log(err);
+          });
+        },
+        deleteUser(id){
+           new swal({
+            title:'Are you sure?',
+            text:'you won not be able to revert this!',
+            type:'warning',
+            showCancelButton:true,
+            confirmButtonColor:'#3085d6',
+            cancelButtonColor:'#d33',
+            confirmButtonText:'Yes, delete it!'
+          }).then((result) => {
+              // send request to the server
+              if (result.value) {
+                
+                    this.form.delete(`api/user/${id}`).then(() => {
+
+                        new swal(
+                          'Delete!',
+                          'Your file has been deleted.',
+                          'success');
+
+                        Fire.$emit('afterCreate');
+
+                    }).catch((err) => {
+                      new swal(
+                          'Failed!',
+                          'There was somthing wronge.',
+                          'Warinig');
+                    });
+                
+              }
+
           });
         }
       },

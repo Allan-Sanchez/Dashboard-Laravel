@@ -1937,26 +1937,59 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
+    var _this = this;
+
     this.loadUsers();
+    Fire.$on('afterCreate', function () {
+      _this.loadUsers();
+    });
   },
   methods: {
     createUser: function createUser() {
+      var _this2 = this;
+
       this.$Progress.start();
-      this.form.post('api/user');
-      $('#newUser').modal('hide');
-      new toast({
-        type: 'success',
-        title: 'User created in successfully'
-      });
-      this.$Progress.finish();
+      this.form.post('api/user').then(function (result) {
+        Fire.$emit('afterCreate');
+        $('#newUser').modal('hide');
+        new toast({
+          type: 'success',
+          title: 'User created in successfully'
+        });
+
+        _this2.$Progress.finish();
+      })["catch"](function (err) {});
     },
     loadUsers: function loadUsers() {
-      var _this = this;
+      var _this3 = this;
 
       axios.get('api/user').then(function (result) {
-        _this.users = result.data.data;
+        _this3.users = result.data.data;
       })["catch"](function (err) {
         console.log(err);
+      });
+    },
+    deleteUser: function deleteUser(id) {
+      var _this4 = this;
+
+      new swal({
+        title: 'Are you sure?',
+        text: 'you won not be able to revert this!',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        // send request to the server
+        if (result.value) {
+          _this4.form["delete"]("api/user/".concat(id)).then(function () {
+            new swal('Delete!', 'Your file has been deleted.', 'success');
+            Fire.$emit('afterCreate');
+          })["catch"](function (err) {
+            new swal('Failed!', 'There was somthing wronge.', 'Warinig');
+          });
+        }
       });
     }
   }
@@ -58689,7 +58722,32 @@ var render = function() {
                         _vm._v(_vm._s(_vm._f("myDate")(user.created_at)))
                       ]),
                       _vm._v(" "),
-                      _vm._m(2, true)
+                      _c("td", [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "btn-group",
+                            attrs: { role: "group" }
+                          },
+                          [
+                            _vm._m(2, true),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-danger mx-1 btn-sm",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.deleteUser(user.id)
+                                  }
+                                }
+                              },
+                              [_c("i", { staticClass: "fas fa-trash" })]
+                            )
+                          ]
+                        )
+                      ])
                     ])
                   }),
                   0
@@ -59016,24 +59074,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("div", { staticClass: "btn-group", attrs: { role: "group" } }, [
-        _c(
-          "button",
-          { staticClass: "btn btn-info btn-sm", attrs: { type: "button" } },
-          [_c("i", { staticClass: "fas fa-edit white" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-danger mx-1 btn-sm",
-            attrs: { type: "button" }
-          },
-          [_c("i", { staticClass: "fas fa-trash" })]
-        )
-      ])
-    ])
+    return _c(
+      "button",
+      { staticClass: "btn btn-info btn-sm", attrs: { type: "button" } },
+      [_c("i", { staticClass: "fas fa-edit white" })]
+    )
   },
   function() {
     var _vm = this
@@ -74002,6 +74047,11 @@ var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.mixin({
   timer: 3000
 });
 window.toast = toast; // end sweetalert
+
+window.Fire = new Vue();
+/*
+** @main 
+*/
 
 var app = new Vue({
   el: '#app',

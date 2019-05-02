@@ -71,6 +71,13 @@ const toast = swal.mixin({
 window.toast = toast;
 
 // end sweetalert
+
+window.Fire = new Vue();
+
+/*
+** @main 
+*/
+
 const app = new Vue({
     el: '#app',
     router,
